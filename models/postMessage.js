@@ -16,7 +16,9 @@ const postSchema = mongoose.Schema(
         createdAt: {
             type: Date,
             default: new Date()
-        } //there will be a date at the time of creating the post 
+        }, //there will be a date at the time of creating the post
+        userID: String,
+        partyType: String
     }
 );
 

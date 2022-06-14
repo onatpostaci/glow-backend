@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+    <!-- Importing the css file -->
+    <link rel="stylesheet" href="./style.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Cloudflare-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+     <!--Axios-->
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+     <script src="login.js" defer></script>
+
+    
+</head>
+<body>
+     <!-- Navigation -->
+     <nav class = "navbar navbar-expand-md navbar-dark badge-dark sticky-top">
+        <div class="container-fluid" id="navbarContainer">
+            <a class="navbar-brand" href="#"><img width = 80px, height = 80px, src="img/glowbetter.png"></a>
+            <button class = "navbar-toggler" type = "button" data-toggle="collapse" data-target="#navbarResponsive" id="burger">
+                <span class = "navbar-toggler-icon"> </span>
+            </button>
+            <div classs="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto" id="listNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reservation</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sign-in-parent">
+        <div class="sign-in-child">
+            <div>
+                <h4 class="display-6" style="color: white; text-align: center;">Come Join the Party!</h1>
+                <hr style="border-color:white;">
+            </div>
+            <div class="input-group">
+                <input type="text" id="mail" required class="input">
+                <label for="name" class="input-label">Email address</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" required class="input">
+                <label for="name" class="input-label">Password</label>
+            </div>
+            <div id = "login-button-div" style="display:inline-block">
+                <a href="#"><button id = "login-button" class="fun" style="width: 150px;"><span>Login</span></button></a>
+                <a href="./signup.html"><button class="fun" style="width: 150px; margin-left: 60px;"><span>Sign Up Now!</span></button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

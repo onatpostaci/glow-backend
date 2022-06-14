@@ -59,3 +59,13 @@ export const likePost = async (req, res) => {
     const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true } );
     res.json(updatedPost);
 };
+
+export const getSpecifiedPosts = async (req, res) => {
+    const { partyType } = req.params; 
+    try {
+        const uniquePostMessages = await PostMessage.find( { "partyType": partyType } )
+        res.status(200).json(uniquePostMessages);
+    }catch (error){
+        res.status(404).json( { message: error.message } );
+    }
+}; 

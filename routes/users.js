@@ -1,6 +1,6 @@
 //requiring express package to start the program in a port
 import express from 'express';
-import {getUsers, createUser, getUserById, deleteUser, updateUser} from '../controllers/users.js'
+import {getUsers, createUser, getUserById, deleteUser, updateUser, checkUser} from '../controllers/users.js'
 
 const router = express.Router();
 
@@ -11,6 +11,9 @@ router.get('/', getUsers);
 
 /* ROUTER TO INSERT A USER INTO THE SYSTEM */
 router.post('/', createUser);
+
+/* ROUTER CHECK THE SYSTEM WHETHER A USER EXISTS OR NOT*/
+router.post('/login', checkUser);
 
 /* ROUTER TO GET A SPECIFIC USER FROM THE SYSTEM */
 router.get('/:id', getUserById);

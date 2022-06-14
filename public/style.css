@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+/*BURGER BUTTON FIRST NOT DISPLAYED*/
+#navbarContainer button{
+    display: none;
+}
+
+/*ITEMS ON THE NAVIGATION BAR*/
+#listNav li a{
+    padding: 30px;
+    transition: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+/*BURGER BUTTON BORDER COLOR*/
+#burger{
+    border-color:lightpink;
+}
+
+/*BURGER BUTTON UNDER 900PX WILL BE DISPLAYED WHICH ENSURES RESPONSIVENESS*/
+@media only screen and (max-width:900px){
+    #navbarContainer button{
+        display: block;
+    }
+    #listNav li a{
+        padding: 10px;
+    }
+
+    #listNav li a:hover{
+        color:white;
+    }
+
+}
+
+#card-no1{
+    background: #343A40;
+}
+
+/*BODY WILL HAVE GRADIENT BACKGROUND ANIMATION*/
+body{
+    background: linear-gradient(
+        to right, #833ab4,
+        #fd1d1d, #fcb045);
+    background-size: 400%,400%;
+    animation: animate-background 10s infinite ease-in-out;
+}
+
+/*BODY WILL HAVE GRADIENT BACKGROUND ANIMATION*/
+@keyframes animate-background{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+.button-res{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 50px;
+    border: 3px solid #3c67e3;
+    border-radius:10px;
+}
+
+.button-res:hover{
+    animation:pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+    0%{
+        box-shadow: 0 0 25px #5ddcff,
+                     0 0 50px #4e00c2;
+    }
+}
+
+
+
+#carouselSlide img{
+    max-width: 100%;
+}
+
+.fun{
+    width: 100%;
+    margin-bottom: 2rem;
+    display: inline-block;
+    text-decoration: none;
+    padding:3px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fun::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background:
+    linear-gradient(115deg,
+    #4fcf70, #fad648,
+    #a767e5, #12bcfe,
+    #44ce7b);
+    background-size: 50% 100%;
+    border-radius: inherit;
+}
+
+.fun span{
+    color: #fff;
+    display: block;
+    padding: 13px 20px;
+    border-radius:3px;
+    position: relative;
+    z-index: z;
+}
+
+.fun:hover::before{
+    animation: animate_border .75s linear infinite;
+}
+
+@keyframes animate_border{
+    to{
+        transform: translateX(-50%)
+    }
+}
+
+.gif{
+    max-width: 100%;
+}
+
+#symbols{
+    text-align: center;
+}
+
+#info-two-column{
+    text-align: center;
+}
+
+.social a{
+    font-size: 4.5em;
+    padding: 3rem;
+}
+
+.fa-facebook-square{
+    color: #3b5998;
+}
+
+.fa-twitter{
+    color: #00aced;
+}
+
+.fa-instagram{
+    color: #517fa4;
+}
+
+.fa-youtube{
+    color: #bb0000;
+}
+
+.fa-google-plus-g{
+    color: #dd4b39;
+}
+
+.fa-facebook-square:hover,
+.fa-twitter:hover,
+.fa-instagram:hover,
+.fa-youtube:hover,
+.fa-google-plus-g:hover{
+    color:#d5d5d5;
+}
+
+
+/***************LOGIN HTML SIGN IN DIV**************/
+.sign-in-parent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -37.5%);
+    width: 700px;
+    height: 400px;
+    display: inline-block;
+    text-decoration: none;
+    padding:3px;
+    border-radius: 6px;
+    overflow: hidden;
+    color: #343A40;
+    /*animation: animate_border .75s linear infinite;*/
+}
+.sign-in-parent::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background:
+    linear-gradient(115deg,
+    #4fcf70, #fad648,
+    #a767e5, #12bcfe,
+    #44ce7b);
+    background-size: 50% 100%;
+    border-radius: inherit;
+    animation: animate_border .75s linear infinite;
+}
+
+.sign-in-child{
+    background-color: #343A40;
+    display: block;
+    padding: 13px 20px;
+    border:solid 1px;
+    position: relative;
+    z-index: z;
+    width: 98%;
+    height: 97%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-group{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -380%);
+    margin-bottom: 30px;
+}
+
+.input{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font: inherit;
+    color:#fff;
+    background-color: transparent;
+    outline: 2px solid #fff;
+    width: 100%;
+}
+
+.input-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    transition: transform .25s;
+    color: #fff;
+}
+
+.input:focus+.input-label,
+.input:valid+.input-label{
+    transform: 
+    translate(10px, -14px) scale(.8);
+    color: #EF6BBB;
+    padding-inline: 5px;
+    background-color: #343A40;
+}
+
+.input:is(:focus, :valid){
+    outline-color: #EF6BBB;
+}
+
+#login-button-div{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-35%, 50%);
+}
+
+#login-button-div-2{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-35%, 370%);
+}
+/***************LOGIN HTML SIGN IN DIV**************/
+
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+  }
+@media (max-width: 768px) {
+  
+}
+@media (max-width: 576px) {
+  
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed {
+  background-image: url('img/mac.png');
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+
+
+
+
+

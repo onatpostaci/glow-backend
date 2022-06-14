@@ -1,5 +1,7 @@
 //requiring express package to start the program in a port
 import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
 
 //to take in incoming post request bodies
 import bodyParser from 'body-parser';
@@ -22,11 +24,12 @@ const app = express();
 app.use(bodyParser.json( { limit: "30mb", extended: true } ));
 app.use(bodyParser.urlencoded( { limit: "30mb", extended: true } ));
 app.use(cors());
+app.use(express.static("public"));
 
 
 
 //------------------------------ MONGODB CONNECTION -----------------------------------
-const CONNECTION_URL = 'mongodb+srv://onatpostaci:onat992009@cluster0.q8ptz.mongodb.net/?retryWrites=true&w=majority';
+const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = 5000;
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("connected to db"))
@@ -40,8 +43,7 @@ app.use('/users', usersRoutes);
 app.use('/posts', postsRoutes);
 
 app.get('/', (req, res) => {
-    console.log("----------------HELLO WORLD------------------");
-    res.send("Welcome from the homepage");
+    return res.redirect("index.html")
 })
 
 app.listen(PORT, () => {console.log(`Server running on port: http://localhost:${PORT}`)})

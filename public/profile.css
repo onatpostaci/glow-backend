@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+/*BURGER BUTTON FIRST NOT DISPLAYED*/
+#navbarContainer button{
+    display: none;
+}
+
+/*ITEMS ON THE NAVIGATION BAR*/
+#listNav li a{
+    padding: 30px;
+    transition: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+/*BURGER BUTTON BORDER COLOR*/
+#burger{
+    border-color:lightpink;
+}
+
+/*BURGER BUTTON UNDER 900PX WILL BE DISPLAYED WHICH ENSURES RESPONSIVENESS*/
+@media only screen and (max-width:900px){
+    #navbarContainer button{
+        display: block;
+    }
+    #listNav li a{
+        padding: 10px;
+    }
+
+    #listNav li a:hover{
+        color:white;
+    }
+
+}
+
+#card-no1{
+    background: #343A40;
+}
+
+/*BODY WILL HAVE GRADIENT BACKGROUND ANIMATION*/
+body{
+    background: linear-gradient(
+        to right, #833ab4,
+        #fd1d1d, #fcb045);
+    background-size: 400%,400%;
+    animation: animate-background 10s infinite ease-in-out;
+}
+
+/*BODY WILL HAVE GRADIENT BACKGROUND ANIMATION*/
+@keyframes animate-background{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+.button-res{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 50px;
+    border: 3px solid #3c67e3;
+    border-radius:10px;
+}
+
+.button-res:hover{
+    animation:pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+    0%{
+        box-shadow: 0 0 25px #5ddcff,
+                     0 0 50px #4e00c2;
+    }
+}
+
+
+@keyframes animate_border{
+    to{
+        transform: translateX(-50%)
+    }
+}
+
+
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+  }
+@media (max-width: 768px) {
+  
+}
+@media (max-width: 576px) {
+  
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed {
+  background-image: url('img/mac.png');
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+/**********THE PROFILE PAGE CSS*****************/
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+#card-profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #343A40;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+#card-profile p, h4{
+    color: #fff;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+#sec-card li{
+    background-color:#343A40;
+}
+
+#sec-card li span, h6{
+    color: #fff;
+}
+
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+    
+}
+
+.bg-gray-300 {
+   /*background-color: #e2e8f0;*/
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+
+
+
+/*********************CREATE A POST**********************/
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .container-post {
+    border-radius: 5px;
+    background-color: #343A40;
+    padding: 20px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }

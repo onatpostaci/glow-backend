@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+    <!-- Importing the css file -->
+    <link rel="stylesheet" href="./profile.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Cloudflare-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!--Axios-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="profile.js" defer></script>
+
+    
+</head>
+<body>
+     <!-- Navigation -->
+     <nav class = "navbar navbar-expand-md navbar-dark badge-dark sticky-top">
+        <div class="container-fluid" id="navbarContainer">
+            <a class="navbar-brand" href="#"><img width = 80px, height = 80px, src="img/glowbetter.png"></a>
+            <button class = "navbar-toggler" type = "button" data-toggle="collapse" data-target="#navbarResponsive" id="burger">
+                <span class = "navbar-toggler-icon"> </span>
+            </button>
+            <div classs="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto" id="listNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reservation</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--The Profile Template-->
+    <div class="container">
+        <div class="main-body">
+        
+            <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                  <div class="card" id= "card-profile">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                        <div class="mt-3">
+                          <h4 id="user-name" style="color: #fff;"></h4>
+                          <p id="organization-type" class="mb-1"></p>
+                          <p id="location" class="font-size-sm"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mt-3" id="sec-card">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" color="#fff" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                        <span id ="website-link" class="link-spans">https://bootdey.com</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg"  color="#fff" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube mr-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Github</h6>
+                        <span id="github-acc" class="link-spans">bootdey</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter mr-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
+                        <span id="twitter-acc" class="link-spans">@bootdey</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
+                        <span id="instagram-acc" class="link-spans">bootdey</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                        <span id="facebook-acc" class="link-spans">bootdey</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card mb-3" style="background-color: #343A40; border: 0 #343A40;">
+                    <div class="card-body" style="background-color: #343A40; border: 0 #343A40;">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Full Name</h6>
+                        </div>
+                        <div id ="full-org-name" class="col-sm-9 data-profile" style="color:#fff">
+                          
+                        </div>
+                      </div>
+                      <hr style="border-color:white;">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div id="user-mail" class="col-sm-9 data-profile" style="color:#fff">
+                          fip@jukmuh.al
+                        </div>
+                      </div>
+                      <hr style="border-color:white;">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Phone</h6>
+                        </div>
+                        <div id="org-no" class="col-sm-9 data-profile" style="color:#fff">
+                          (239) 816-9029
+                        </div>
+                      </div>
+                      <hr style="border-color:white;">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Mobile</h6>
+                        </div>
+                        <div id="org-mobile" class="col-sm-9 data-profile" style="color:#fff">
+                          (320) 380-4539
+                        </div>
+                      </div>
+                      <hr style="border-color:white;">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Address</h6>
+                        </div>
+                        <div id="org-loc" class="col-sm-9 data-profile" style="color:#fff">
+                          Bay Area, San Francisco, CA
+                        </div>
+                      </div>
+                      <hr style="border-color:white;">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Created At</h6>
+                        </div>
+                        <div id="created-at" class="col-sm-9 data-profile" style="color:#fff">
+                            Bay Area, San Francisco, CA
+                        </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            
+            <div class="container-fluid col-sm-12 mb-3" style="background-color:#343A40;">
+                <div class="card h-100" style="background-color:#343A40;">
+                    <div class="card-body" style="background-color:#343A40;">
+                       <h6 style="color:#fff;">Create Post!</h6> 
+                       <hr style="border-color:white;">
+
+                        <!----------------------------------------------------------------------------->
+                        <div class="container-post">
+                            <form>
+                            <div class="row">
+                              <div class="col-25">
+                                <label style="color:#fff;" for="event-name">Event Title:</label>
+                              </div>
+                              <div class="col-75">
+                                <input type="text" id="event-name" name="event-name" placeholder="Event Title..">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-25">
+                                <label style="color:#fff;" for="event-tags">Event Tags:</label>
+                              </div>
+                              <div class="col-75">
+                                <input type="text" id="event-tags" name="event-tags" placeholder="Event Tags..">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-25">
+                                <label style="color:#fff;" for="event-type">Event Type:</label>
+                              </div>
+                              <div class="col-75">
+                                <select id="event-type" name="event-type">
+                                  <option value="Open-Air">Open Air</option>
+                                  <option value="Night-Club">Night Clubs</option>
+                                  <option value="Private-Session">Private Sessions</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-25">
+                                <label style="color:#fff;" for="event-message">Event Message:</label>
+                              </div>
+                              <div class="col-75">
+                                <textarea id="event-message" name="event-message" placeholder="Event Message.." style="height:200px"></textarea>
+                              </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                              <a class="btn btn-success" id="submit-btn" style="color:#fff; width: 100px;"> Submit </a>
+                            </div>
+                            </form>
+                          </div>
+                        <!----------------------------------------------------------------------------->
+                        
+                        <hr style="border-color:white;"> 
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Current Post Count: </h6>
+                            </div>
+                            <div id="post-count" class="col-sm-9" style="color:#fff;">
+                                
+                            </div>
+                        </div>
+                        <hr style="border-color:white;"> 
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div> 
+    </div>
+
+        <!--The Profile Template-->
+
+</body>
+</html>

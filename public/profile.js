@@ -100,5 +100,5 @@ window.onload = async function(){
 
 submitButton.addEventListener("click", async () => {
     console.log("Event Title: " + eventTitle.value + "\nEvent Tags: " + eventTags.value + "\nEvent Type: " + eventType.value + "\nEvent Message: " + eventMessage.value);
-
+    
 });
